@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - InfinityPeak</title>
+    <link rel="stylesheet" href="~/css/nav.css" />
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <!-- Navigation bar -->
+<nav>
+    <img src="~/images/icon.png" alt="Logo" id="nav-logo">
+    <div class="nav-items">
+        @{
+            var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+            var action = ViewContext.RouteData.Values["action"]?.ToString();
+        }
+        <a href="/" class="@(controller == "Home" && action == "Index" ? "active" : "")">Home</a>
+        <a href="/Projects" class="@(controller == "Projects" && action == "Index" ? "active" : "")">Projects</a>
+        <a href="/About" class="@(controller == "About" && action == "Index" ? "active" : "")">About</a>
+        <a href="/Contact" class="@(controller == "Contact" && action == "Index" ? "active" : "")">Contact</a>
+    </div>
+</nav>
+</header>
+
+<main role="main">
+    @RenderBody()
+</main>
+
+<footer>
+    <!-- Footer -->
+    <p>&copy; 2024 - InfinityPeak</p>
+</footer>
+
+</body>
+</html>

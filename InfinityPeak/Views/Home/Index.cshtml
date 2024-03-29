@@ -1,0 +1,100 @@
+﻿@model InfinityPeak.Models.HomeModel
+@{
+    Func<string, Microsoft.AspNetCore.Html.IHtmlContent> renderImage = 
+        (string imageName) => (new Microsoft.AspNetCore.Html.HtmlContentBuilder())
+            .AppendHtml($"<img src='{Url.Content($"~/images/{imageName}.png")}' alt='{imageName} image'>");
+}
+
+<!-- Wide image with title and description -->
+<section class="wide-image">
+    @renderImage("icon")
+    <h1>Unleash Your Imagination</h1>
+    <p>Experience the thrill of our captivating unity games and embark on a limitless adventure.</p>
+    <a href="#our-story">Game on!</a>
+</section>
+
+<!-- Our Story section -->
+<section id="our-story" class="section">
+    <div id="top">
+        <h1>Our Story</h1>
+        <p>
+            Infinity Peak is a passionate indie game designing company that creates captivating unity games for the ultimate gaming experience. With our unique blend of creativity and technical expertise, we aim to deliver unforgettable adventures to players worldwide.
+            <a href="/AboutUs">About Us</a>
+        </p>
+    </div>
+    <div id="bottom">
+        @renderImage("icon")
+        @renderImage("icon")
+    </div>
+</section>
+
+<!-- Our Services section -->
+<section id="hundredBox" class="section">
+    <div id="our-services">
+        <h1>Our Services</h1>
+        <div>
+            <div>
+                @renderImage("icon")
+                <p>Game Development</p>
+            </div>
+            <div>
+                @renderImage("icon")
+                <p>Level Design</p>
+            </div>
+            <div>
+                @renderImage("icon")
+                <p>Character Design</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="quote-text" class="section">
+    @renderImage("icon")
+    <div>
+        <h1>Players Love Us</h1>
+        <p>Infinity Peak's games have provided me with hours of entertainment. The attention to detail and immersive gameplay make them some of the best in the industry.</p>
+    </div>
+</section>
+
+<!-- Blog Items section -->
+<section id="hundredBox">
+    <div id="blog-items" class="section">
+        <h1>Blog Items</h1>
+        <h3>scroll ></h3>
+        <div id="scrollable">
+            <div>
+                @renderImage("icon")
+                <h2>Infinity Peak</h2>
+                <p>A new indie friend group turning their hobby into reality</p>
+            </div>
+            <div>
+        
+                @renderImage("icon")
+                <h2>Embark on an Epic Journey Through Time with Era Explorer: Through Times</h2>
+                <p>ERA EXPLORER</p>
+            </div>
+            <div>
+                @renderImage("icon")
+                <h2>Blog Title 3</h2>
+                <p>Small description for Blog 3</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Get in Touch section -->
+<section id="get-in-touch" class="section">
+    <h1>Get in Touch</h1>
+    <div>
+        <form>
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        @renderImage("icon")
+    </div>
+</section>
+
+<script src="~/js/home.js"></script>
